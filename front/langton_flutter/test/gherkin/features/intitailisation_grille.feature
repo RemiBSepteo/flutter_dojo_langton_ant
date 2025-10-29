@@ -8,3 +8,6 @@ Feature: au lancement la grille est générée
 
   Scenario: Il n'y a pas de cases noires
     Then je vois {0} case noire
+
+  Scenario: La fourmi est au centre
+    Then la fourmi est en {10} {10}
