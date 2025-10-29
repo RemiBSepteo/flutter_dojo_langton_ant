@@ -12,6 +12,18 @@ class GrilleDeLangton extends StatelessWidget {
   final int largeur;
 
   final List<List<Case>> cases;
+  final fourmi = FourmiDeLangton();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class FourmiDeLangton extends StatelessWidget {
+  const FourmiDeLangton({super.key, this.direction = 0});
+
+  final int direction;
 
   @override
   Widget build(BuildContext context) {

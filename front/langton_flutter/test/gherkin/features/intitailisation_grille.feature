@@ -11,3 +11,6 @@ Feature: au lancement la grille est générée
 
   Scenario: La fourmi est au centre
     Then la fourmi est en {10} {10}
+
+  Scenario: La fourmi est tournée vers le haut
+    Then la fourmi a la direction {0}

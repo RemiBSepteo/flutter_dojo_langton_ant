@@ -7,7 +7,8 @@ import 'package:flutter_test/flutter_test.dart';
 import './../steps/lapplication_est_lancee.dart';
 import './../steps/je_vois_une_grille_de_par.dart';
 import './../steps/je_vois_case_noire.dart';
-import '../../gherkin/steps/la_fourmi_est_en.dart';
+import './../steps/la_fourmi_est_en.dart';
+import '../../gherkin/steps/la_fourmi_a_la_direction.dart';
 
 void main() {
   group('''au lancement la grille est générée''', () {
@@ -26,6 +27,10 @@ void main() {
     testWidgets('''La fourmi est au centre''', (tester) async {
       await bddSetUp(tester);
       await laFourmiEstEn(tester, 10, 10);
+    });
+    testWidgets('''La fourmi est tournée vers le haut''', (tester) async {
+      await bddSetUp(tester);
+      await laFourmiALaDirection(tester, 0);
     });
   });
 }
