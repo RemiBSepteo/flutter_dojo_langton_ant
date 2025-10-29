@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:langton_ant/widgets/grille_de_langton.dart';
+import 'package:langton_ant/widgets/grille.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // in the middle of the parent.
       //   child: Image.asset('assets/ant.png', height: 80),
       // ),
-      body: GrilleDeLangton(longueur: 21, largeur: 21),
+      body: Grille(longueur: 21, largeur: 21),
     );
   }
 }

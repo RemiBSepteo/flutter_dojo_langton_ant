@@ -1,10 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:langton_ant/widgets/fourmi.dart';
 import 'package:langton_ant/widgets/grille.dart';
 
-/// Usage: la fourmi a la direction {0}
-Future<void> laFourmiALaDirection(WidgetTester tester, num param1) async {
+/// Usage: la fourmi est visible
+Future<void> laFourmiEstVisible(WidgetTester tester) async {
   final grilleDeLangton = find.byType(Grille);
   final grilles = tester.widgetList<Grille>(grilleDeLangton);
   final grille = grilles.first;
-  expect(grille.fourmi.direction, equals(0));
+
+  expect(find.byType(Fourmi), findsOneWidget);
 }
