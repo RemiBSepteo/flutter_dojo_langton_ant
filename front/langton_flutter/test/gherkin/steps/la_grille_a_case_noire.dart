@@ -1,13 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:langton_ant/widgets/grille.dart';
 
 /// Usage: la grille a {0} case noire
 Future<void> laGrilleACaseNoire(WidgetTester tester, num param1) async {
-  final grilleDeLangton = find.byType(Grille);
-  final grilles = tester.widgetList<Grille>(grilleDeLangton);
-  final grille = grilles.first;
+  final containerFinder = find.byType(Container);
 
-  final cases = grille.cases;
-  final casesNoires = cases.expand((ligne) => ligne).where((c) => c.isNoir);
-  expect(casesNoires.length, equals(param1));
+  final containers = tester.widgetList<Container>(containerFinder);
+  final blackCount = containers.where((c) => c.color == Colors.black).length;
+  expect(blackCount, equals(param1));
 }

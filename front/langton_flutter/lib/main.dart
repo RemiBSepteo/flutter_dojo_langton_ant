@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:langton_ant/widgets/grille.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:langton_ant/presentation/bloc/grille_bloc.dart';
+import 'package:langton_ant/presentation/screens/grille_screen.dart';
 
 void main() {
+  Bloc.observer = const AppBlocObserver();
   runApp(const MyApp());
+}
+
+/// {@template app_bloc_observer}
+/// Custom [BlocObserver] that observes all bloc and cubit state changes.
+/// {@endtemplate}
+class AppBlocObserver extends BlocObserver {
+  /// {@macro app_bloc_observer}
+  const AppBlocObserver();
+
+  @override
+  void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
+    super.onChange(bloc, change);
+    if (bloc is Cubit) print(change);
+  }
+
+  @override
+  void onTransition(
+    Bloc<dynamic, dynamic> bloc,
+    Transition<dynamic, dynamic> transition,
+  ) {
+    super.onTransition(bloc, transition);
+    print(transition);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -37,12 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
+
       //   body:
       //   // Center is a layout widget. It takes a single child and positions it
       //   // in the middle of the parent.
       //   child: Image.asset('assets/ant.png', height: 80),
       // ),
-      body: Grille(longueur: 21, largeur: 21),
+      body: BlocProvider<GrilleBloc>(
+        create: (_) => GrilleBloc(),
+        child: GrilleScreen(),
+      ),
     );
   }
 }
