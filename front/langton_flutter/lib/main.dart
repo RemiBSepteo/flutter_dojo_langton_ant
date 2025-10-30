@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:langton_ant/features/grille/bloc/grille_bloc.dart';
 import 'package:langton_ant/features/grille/screens/grille_screen.dart';
 
 void main() {
@@ -69,10 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   // in the middle of the parent.
       //   child: Image.asset('assets/ant.png', height: 80),
       // ),
-      body: BlocProvider<GrilleBloc>(
-        create: (_) => GrilleBloc(),
-        child: GrilleScreen(),
-      ),
+      body: GrilleScreen(),
     );
   }
 }

@@ -8,13 +8,16 @@ class FourmiScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FourmiBloc, FourmiState>(
-      builder: (context, state) {
-        return RotatedBox(
-          quarterTurns: state.direction,
-          child: Image.asset('assets/ant.png', height: 80),
-        );
-      },
+    return BlocProvider<FourmiBloc>(
+      create: (_) => FourmiBloc(),
+      child: BlocBuilder<FourmiBloc, FourmiState>(
+        builder: (context, state) {
+          return RotatedBox(
+            quarterTurns: state.direction,
+            child: Image.asset('assets/ant.png', height: 80),
+          );
+        },
+      ),
     );
   }
 }
