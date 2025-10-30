@@ -6,8 +6,8 @@ Feature: au lancement la grille est générée
   Scenario: La grille de 21 par 21
     Then la grille de {21} par {21}
 
-  Scenario: Il n'y a pas de cases noires
-    Then Il y a {0} case noire
+  Scenario: La grille n'a pas de cases noires
+    Then la grille a {0} case noire
 
   Scenario: La fourmi est au centre
     Then la fourmi est en {10} {10}
