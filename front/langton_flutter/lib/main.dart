@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:langton_ant/presentation/bloc/grille_bloc.dart';
-import 'package:langton_ant/presentation/screens/grille_screen.dart';
+import 'package:langton_ant/features/grille/bloc/grille_bloc.dart';
+import 'package:langton_ant/features/grille/screens/grille_screen.dart';
 
 void main() {
   Bloc.observer = const AppBlocObserver();

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:langton_ant/presentation/bloc/grille_bloc.dart';
-import 'package:langton_ant/presentation/bloc/grille_state.dart';
-import 'package:langton_ant/widgets/fourmi.dart';
+import 'package:langton_ant/features/fourmi/bloc/fourmi_bloc.dart';
+import 'package:langton_ant/features/fourmi/screens/fourmi_screen.dart';
+import 'package:langton_ant/features/grille/bloc/grille_bloc.dart';
+import 'package:langton_ant/features/grille/bloc/grille_state.dart';
 
 class GrilleScreen extends StatelessWidget {
   const GrilleScreen({super.key});
@@ -54,7 +55,10 @@ class GrilleScreen extends StatelessWidget {
                                     : Colors.white,
                               ),
                               child: cell.hasFourmi
-                                  ? Fourmi(key: Key("fourmi"))
+                                  ? BlocProvider<FourmiBloc>(
+                                      create: (_) => FourmiBloc(),
+                                      child: FourmiScreen(),
+                                    )
                                   : null,
                             ),
                           )

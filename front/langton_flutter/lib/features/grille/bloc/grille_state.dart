@@ -1,5 +1,5 @@
+import 'package:langton_ant/features/fourmi/screens/fourmi_screen.dart';
 import 'package:langton_ant/models/case.dart';
-import 'package:langton_ant/widgets/fourmi.dart';
 
 class GrilleState {
   GrilleState({required this.longueur, required this.largeur})
@@ -15,5 +15,5 @@ class GrilleState {
 
   final List<List<Case>> cases;
 
-  final Fourmi fourmi = Fourmi();
+  final FourmiScreen fourmi = FourmiScreen();
 }
